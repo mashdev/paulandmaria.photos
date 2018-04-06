@@ -1,5 +1,2 @@
-**/images
-**/thumbs
-
-!/images/.gitkeep
-!/thumbs/.gitkeep
+*.jpg
+*.jpeg
