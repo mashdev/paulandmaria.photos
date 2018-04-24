@@ -17,7 +17,7 @@ connection.connect(function(err){
 
 var app = express();
 
-const publicPath = path.join(__dirname, 'css');
+const publicPath = path.join(__dirname, 'views/public');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
