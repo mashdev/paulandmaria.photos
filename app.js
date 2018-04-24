@@ -1,6 +1,7 @@
 var express = require('express'), 
 exphbs = require('express-handlebars'),
-mysql = require('mysql');
+mysql = require('mysql'),
+path = require('path');
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -16,8 +17,12 @@ connection.connect(function(err){
 
 var app = express();
 
+const publicPath = path.join(__dirname, 'css');
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use('/', express.static(publicPath));
 
 app.get('/', function(req, res){
     var sql = 'SELECT * FROM bb_terms';
@@ -32,6 +37,7 @@ app.get('/', function(req, res){
     
 });
 
+app.use('/about', express.static(publicPath));
 app.get('/about', function(req, res){
     res.render('about');
 });
