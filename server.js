@@ -3,7 +3,7 @@ var fs = require('fs'),
 gm = require('gm').subClass({imageMagick: true});
 
 // iterate through images directory to read file names to array
-var files = fs.readdirSync('images/');
+var files = fs.readdirSync('thumbs/');
 
 // get array count and iterate through each file
 // to create a thumbnail of each image in thumbs directory

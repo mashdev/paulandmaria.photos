@@ -9,7 +9,7 @@
 <body>
     <h1>Example App: Home</h1>
     <p>Example app</p>
-    <!--
+   
     {{#each row}}
         <ul>
         <li>
@@ -17,8 +17,21 @@
         </li>
         </ul>
     {{/each}}
-    -->
 
+     <ul>
+    {{#each file}}
+       
+            <li>
+                <img src="thumbs/{{this}} ">
+            </li>
+    {{/each}}
+    </ul>
+
+    {{#each url}}
+        {{ body }}
+    {{/each}}
+   
+   <img src="" alt="">
 
 </body>
 </html>

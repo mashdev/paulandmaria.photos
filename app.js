@@ -1,6 +1,7 @@
 var express = require('express'), 
 exphbs = require('express-handlebars'),
 mysql = require('mysql'),
+fs = require('fs'),
 path = require('path');
 
 var connection = mysql.createConnection({
@@ -17,7 +18,7 @@ connection.connect(function(err){
 
 var app = express();
 
-const publicPath = path.join(__dirname, 'views/public');
+const publicPath = path.join(__dirname, 'views/public'); 
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -25,6 +26,7 @@ app.set('view engine', 'handlebars');
 app.use('/', express.static(publicPath));
 
 app.get('/', function(req, res){
+    var files = fs.readdirSync('thumbs/');
     var sql = 'SELECT * FROM bb_terms';
     connection.query(sql, function(err, rows, fields){
         if(err) {
@@ -32,7 +34,10 @@ app.get('/', function(req, res){
         }
         
         console.log('successful query');
-        res.render('home', {row: rows});
+        res.render('home', {
+            row: rows, 
+            file: files
+            });
     });
     
 });
