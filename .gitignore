@@ -3,3 +3,4 @@
 *.JPG
 thumbs/**/*
 images/**/*
+views/public/webimages/**/*
