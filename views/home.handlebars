@@ -7,31 +7,97 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Example App: Home</h1>
-    <p>Example app</p>
 
-    {{#each row}}
-        <ul>
-        <li>
-            {{this.term_id}} {{this.name}} {{this.slug}}
-        </li>
-        </ul>
-    {{/each}}
 
-     <ul>
-    {{#each file}}
+  <!-- background cover image and text -->
+  <div class="container-fluid bg-cover">
+    <div class="heading flex">
+      <p class="heading-text">
+        Maria And Paul
+      </p>
+    </div>
+  </div>
 
-            <li>
-                <img src="webimages/{{this}}">
-            </li>
-    {{/each}}
-    </ul>
+  <div class="container-fluid flex story-of-us">
+      <p class="our-story" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Our Story</p>
+  </div>
 
-    {{#each url}}
-        {{ body }}
-    {{/each}}
+  <div class="row col-padding">
+    <div class="col col-padding">
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body collapse-background">
+          <!-- /////////////////////// -->
+          <div class="container">
+            <div class="timeline">
+                <div class="contain left">
+                    <div class="content">
+                    <h2>October 1996</h2>
+                    <img src="webimages/ahs-logo.jpg" class="tn-image-left" alt="">
+                    <p>Paul meets Maria in science class where she tries to copy off of him but he does let her. He refuses to let her cheat off of him. He goes on his own way and hanging out with friends in the computer lab while Maria hangs out with the jocks and the rest of the cool kids</p>
+                    </div>
+                </div>
+                <div class="contain right">
+                    <div class="content">
+                    <h2>February 2006</h2>
+                    <p>Paul goes to hang out as usual at his favorite bar on a Thursday and notices a new girl (Maria) but dismisses it. Maria's friend Lori, says to Paul "Hey you know my friend" and he responds "Umm, no I don't.." The second that Maria said to him, "We went to high school togther" Paul said, "Maria Hernandez, I freaking hated you in high school. She replied back, "so are you going to buy me a drink??" Needless to say that he did buy her drink and they exchanged phone numbers.</p>
+                    </div>
+                </div>
+                <div class="contain left">
+                    <div class="content">
+                    <h2>July 2006</h2>
+                    <p>Paul asks Maria to be his girlfriend</p>
+                    </div>
+                </div>
+                <div class="contain right">
+                    <div class="content">
+                    <h2>December 2006</h2>
+                      <img src="webimages/boston-tn.jpg" class="tn-image-right" alt="Boston">
+                        <p class="content-text-right">Paul surprises Maria and buys her a boxer from the pound and she names him Boston. One day after Boston destroys Maria's apartment.  </p>
+                    </div>
+                </div>
+                <div class="contain left">
+                    <div class="content">
+                    <h2>March 2008</h2>
+                      <img src="webimages/bella-tn.jpg" class="tn-image-left" alt="Bella">
+                        <p>Maria and Paul rent their first house and get an additional boxer (Bella) to entertain Boston, but Boston keeps destroying Maria and Paul's home</p>
+                    </div>
+                </div>
+                <div class="contain right">
+                    <div class="content">
+                    <h2>March 2010</h2>
+                    <p>Maria and Paul buy their first home.</p>
+                    </div>
+                </div>
+                <div class="contain left">
+                    <div class="content">
+                    <h2>February 2017</h2>
+                    <img src="webimages/proposal.jpg" class="tn-image-left proposal" alt="">
+                    <p>Maria and Paul plan a trip to Disneyland where he Finally proposes to her in front of Snow White's castle!</p>
+                    </div>
+                </div>
+            </div>
 
-   <img src="" alt="">
+            </div> <!--  end main container -->
+            <div class="container">
+                <div class="end-box">
+                    <h2>February 23rd, 2018</h2>
+                    <p>Maria and Paul finally get married!</p>
+                    <img src="webimages/wedding.jpg" class="wedding-sm" alt="">
+                </div>
+            </div>
+
+          <!-- /////////////////////// -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="spacer"></div>
 
 </body>
 </html>

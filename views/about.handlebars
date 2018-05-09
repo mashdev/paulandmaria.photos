@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-</head>
-<body>
+
     <h1>Example App: About</h1>
     <p>About pages</p>
-</body>
-</html>
+
+    {{#each row}}
+
+    <a href="webimages/md_{{this.imageName}}" data-fancybox="gallery" data-caption="Caption #1">
+      <img src="webimages/tn_{{this.imageName}}">
+    </a>
+
+    <a href="image.jpg" data-fancybox data-caption="Caption for single image">
+	<img src="thumbnail.jpg" alt="" />
+</a>
+
+
+    {{/each}}
+
+
+        {{#each url}}
+            {{ body }}
+        {{/each}}
+
+<!-- </html> -->

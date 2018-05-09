@@ -1,3 +1,326 @@
-body {
-    background-color: #eee;
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #757D75;
+    font-family: 'Raleway', sans-serif;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.navbar-trans {
+background: transparent; }
+
+.bg-cover {
+  display: flex;
+  background-image: url('../webimages/background-lg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  /* border-bottom: 3px solid #fff;; */
+}
+
+.heading {
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  opacity: .8;
+  margin-top: 15px;
+}
+
+.heading-text {
+  color: white;
+  background-color: #000;
+  font-size: 3rem;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.collapse-background {
+  background-color: #757D75;
+}
+
+.tn-image {
+  height: 125px;
+  width: 125px;
+}
+
+.content-text-right p {
+  padding-left: 5px;
+}
+
+.tn-image-right {
+  float: left;
+  margin-right: 20px;
+  border-radius: 5px;
+  height: 150px;
+  width: 150px;
+}
+
+.tn-image-left {
+  float: right;
+  margin-left: 20px;
+  border-radius: 5px;
+  height: 150px;
+  width: 150px;
+}
+
+.proposal {
+  height: 110px;
+}
+
+.wedding-sm {
+  border-radius: 5px;
+}
+
+.story-of-us {
+  background-color: #fff;
+  justify-content: center;
+  padding: 50px;
+
+  clip-path: polygon(
+  0 0, /* left top */
+  100% 0, /* right top */
+  100% 100%, /* right bottom */
+  0 90% /* left bottom */
+);
+}
+
+.our-story {
+  cursor: s-resize;
+  background-color: #757D75;
+  color: #fff;
+  padding: 10px 30px 10px 30px;
+  border-radius: 3px;
+}
+
+.col-padding {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.story-of-us p {
+  font-size: 4rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.contain {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* circle on line */
+.contain::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: #F22613;
+    border: 4px solid #fff;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+/* triangle pointing to date */
+.left::before {
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 3px;
+    z-index: 1;
+    right:30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.right::before {
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent
+}
+
+.right::after {
+    left: -13px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    /* box-shadow: 1px 5px 5px red; */
+    /* border: 1px solid red; */
+}
+
+.end-box {
+    background-color: #fff;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 6px;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.spacer {
+  height: 50px;
+}
+
+
+
+/*
+**
+** START OF MEDIA QUERIES
+**
+*/
+
+@media screen and (max-width: 600px) {
+
+    .bg-cover {
+      background-image: url('../webimages/background-sm.jpg');
+    }
+
+    .heading {
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .heading-text {
+      text-align: center;
+    }
+
+    .story-of-us {
+      text-align: center;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .contain {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .contain::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .content {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tn-image-right {
+      padding-right: 10px;
+    }
+
+    .tn-image-left {
+      padding-left: 15px;
+    }
+
+    img {
+      display: flex;
+      align-content: center;
+      height: 100px;
+      width: 100px;
+    }
+
+    .content h2 {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .left::after, .right::after {
+        left: 18px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .flex {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: left;
+
+    }
+    .end-box {
+        background-color: #fff;
+        border-radius: 6px;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        padding: 20px 30px;
+        align-items: baseline;
+
+    }
+
+    .wedding-sm {
+      height: 100%;
+      width: 100%;
+
+
+    }
+
+
+
 }
