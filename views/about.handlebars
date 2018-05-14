@@ -2,22 +2,21 @@
     <h1>Example App: About</h1>
     <p>About pages</p>
 
+<div class="image-grid">
+
     {{#each row}}
 
-    <a href="webimages/md_{{this.imageName}}" data-fancybox="gallery" data-caption="Caption #1">
+    {{!-- <a href="webimages/md_{{this.imageName}}" data-fancybox="gallery" data-caption="Caption #1">
+      <img src="webimages/tn_{{this.imageName}}">
+    </a> --}}
+
+    <a href="webimages/md_{{this.imageName}}" class="tn-img-gallery" data-fancybox="images" data-srcset="webimages/lg_{{this.imageName}} 800w, webimages/md_{{this.imageName}} 570w, webimages/tn_{{this.imageName}} 280w " data-caption="Caption #1">
       <img src="webimages/tn_{{this.imageName}}">
     </a>
-
-    <a href="image.jpg" data-fancybox data-caption="Caption for single image">
-	<img src="thumbnail.jpg" alt="" />
-</a>
 
 
     {{/each}}
 
-
-        {{#each url}}
-            {{ body }}
-        {{/each}}
+</div>
 
 <!-- </html> -->
