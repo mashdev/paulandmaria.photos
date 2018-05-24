@@ -4,21 +4,17 @@ gm = require('gm').subClass({imageMagick: true}),
 mysql = require('mysql');
 
 // iterate through images directory to read file names to array
-//var files = fs.readdirSync('images/');
-
 var files = fs.readdirSync('images/');
 
-// var resizeLocation = "views/public/webimages/"
+var resizeLocation = "views/public/webimages/"
 
-// get array count and iterate through each file
-// to create a thumbnail of each image in thumbs directory
-
+/*
 
 var connection = mysql.createConnection({
     host: 'localhost',
-    user: '',
-    password: '',
-    database: ''
+    user: 'mash',
+    password: 'Gibson95!',
+    database: 'mariaandpaul'
 });
 
 connection.connect(function(err){
@@ -26,12 +22,14 @@ connection.connect(function(err){
   console.log("connected");
 });
 
+*/
 
-//** get images file names and insert each to images table **//
+// get images file names and insert each to images table **//
 
+/*
 function insertImgData(data){
-  let sql = "INSERT INTO images (imageName, orientation) VALUES (?,?)";
-  
+  let sql = "INSERT INTO images (imageName, orientation, category) VALUES (?,?,?)";
+
   connection.query(sql, data, function(err, result) {
     if (err) {
       throw err;
@@ -46,50 +44,54 @@ function insertImgData(data){
 for(let i = 0; i < files.length; i++) {
   gm('images/' + files[i]).size(function(err, value) {
     if(value.width > 5000) {
-      imgVal = [files[i], "landscape"];
+      imgVal = [files[i], "landscape", "reception"];
       insertImgData(imgVal);
-      
     }
     else {
-      imgVal = [files[i], "portrait"];
+      imgVal = [files[i], "portrait", "reception"];
       insertImgData(imgVal);
     }
-    
   })
 }
 
+*/
 
-      // // looks through images dir and creates a thumbnail @ 5%
-      // for (let i = 0; i < files.length; i++) {
-      //   gm('images/' + files[i])
-      //   .resize(5,'%')
-      //   .write(resizeLocation + 'tn_'+ files[i], function(err) {
-      //     if(err) return console.dir(arguments)
-      //     console.log(this.outname + "create :: " + arguments[3])
-      //   })
-      // }
-      //
-      // // looks through images dir and creates a medium size image @ 10%
-      // for (let i = 0; i < files.length; i++) {
-      //   gm('images/' + files[i])
-      //   .resize(10,'%')
-      //   .write(resizeLocation + 'md_'+ files[i], function(err) {
-      //     if(err) return console.dir(arguments)
-      //     console.log(this.outname + "create :: " + arguments[3])
-      //   })
-      // }
-      //
-      // // looks through images dir and creates a medium size image @ 15%
-      // for (let i = 0; i < files.length; i++) {
-      //   gm('images/' + files[i])
-      //   .resize(15,'%')
-      //   .write(resizeLocation + 'lg_'+ files[i], function(err) {
-      //     if(err) return console.dir(arguments)
-      //     console.log(this.outname + "create :: " + arguments[3])
-      //   })
-      // }
+// looks through images dir and creates a thumbnail @ 5%
 
-    // console.log("number of records inserted: " + i);
-//  });
+// for (var i = 0; i < files.length; i++) {
+//   gm('images/' + files[i])
+//   .resize(5,'%')
+//   .write(resizeLocation + 'tn_'+ files[i], function(err) {
+//     // if(!err) return console.dir(arguments)
+//     if(!err) return console.log(this.outname);
+//   });
+// };
 
-//} //end of for loop
+
+// looks through images dir and creates a medium size image @ 10%
+
+//
+// for (let i = 0; i < files.length; i++) {
+//   gm('images/' + files[i])
+//   .resize(10,'%')
+//   .write(resizeLocation + 'md_'+ files[i], function(err) {
+//     // if(err) return console.dir(arguments)
+//     if(!err) return console.log(this.outname);
+//   });
+//
+// };
+
+
+// looks through images dir and creates a medium size image @ 15%
+
+for (let i = 0; i < files.length; i++) {
+  gm('images/' + files[i])
+  .resize(15,'%')
+  .write(resizeLocation + 'lg_'+ files[i], function(err) {
+    // if(err) return console.dir(arguments)
+    if(!err) return console.log(this.outname);
+  })
+}
+
+// console.log("exit process");
+// return process.exit(1);
