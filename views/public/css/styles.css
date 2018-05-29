@@ -42,9 +42,10 @@ background: transparent; }
   color: white;
   background-color: #000;
   font-size: 3rem;
+  margin-right: 5px;
+  margin-left: 5px;
   padding-left: 25px;
   padding-right: 25px;
-  /* border-radius: 10px; */
   text-align: center;
   border: 3px solid black;
 }
@@ -63,7 +64,16 @@ button:hover, .heading-text:hover {
   margin-top: 15px;
 }
 
+.bg-footer-txt {
+  justify-content: center;
+}
+
 .bg-footer:hover {
+
+}
+
+h1 {
+  color: #fff;
 
 }
 
@@ -333,12 +343,14 @@ i {
   padding: 0 5px;
   width: 85%;
   margin: 0 auto;
+
 }
 
 .column {
   flex: 25%;
   max-width: 25%;
   padding: 0 5px;
+
 }
 
 img {
@@ -351,127 +363,49 @@ img {
 }
 
 .photo {
-  padding: 10px 10px 40px 10px;
+  padding: 10px 10px 0px 10px;
   background-color: #fff;
 }
-/************************************/
 
-/************************************/
-
-
-/*
-**
-** START OF MEDIA QUERIES
-**
-*/
-
-/*
-@media screen and (max-width: 600px) {
-
-    .bg-cover {
-      background-image: url('../webimages/background-sm.jpg');
-    }
-
-    .heading {
-
-      align-items: center;
-      justify-content: center;
-    }
-
-    .heading-text {
-      text-align: center;
-    }
-
-    .story-of-us {
-      text-align: center;
-    }
-
-    .timeline::after {
-        left: 31px;
-    }
-
-    .contain {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-
-    .contain::before {
-        left: 60px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-    }
-
-    .content {
-      align-items: center;
-      justify-content: center;
-    }
-
-    .tn-image-right {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    .tn-image-left {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    img {
-      display: flex;
-      align-content: center;
-      height: 100px;
-      width: 100px;
-      border-radius: 5px;
-    }
-
-    .content h2 {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-    }
-
-    .left::after, .right::after {
-        left: 18px;
-    }
-
-    .right {
-        left: 0%;
-    }
-
-    .flex {
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        justify-content: left;
-
-    }
-    .end-box {
-        background-color: #fff;
-        border-radius: 6px;
-        text-align: center;
-        justify-content: center;
-        width: 100%;
-        padding: 20px 30px;
-        align-items: baseline;
-
-    }
-
-    .wedding-sm {
-      height: 100%;
-      width: 100%;
-
-
-    }
+.description {
+  background-color: #fff;
+  padding: 0px 10px 2px 10px; */
+  text-align: center;
 
 }
 
-*/
+.btn {
+  background-color: #333;
+  border: 1px solid #333;
+}
 
-/*********/
+.btn:hover {
+  background-color: #444;
+  border: 1px solid #333;
+
+  padding: 6px 12px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown:hover {
+  margin: 0px;
+  padding: 0px;
+}
+
+.mobile {
+  margin-bottom: 15px;
+}
+
+/************************************/
+/*
+** START OF MEDIA QUERIES
+**
+/************************************/
+
 @media screen and (max-width: 1000px) {
     .column {
         flex: 33%;
@@ -479,11 +413,24 @@ img {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 980px) {
     .column {
         flex: 50%;
         max-width: 50%;
     }
+
+    button {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 3px;
+    }
+
+    .mobile {
+      min-width: 100%;
+      display: block;
+      margin-bottom: 0;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -496,4 +443,29 @@ img {
       width: 100%;
       margin: 0;
     }
+
+    .photo {
+      padding: 3px 3px 3px 3px;
+      background-color: #fff;
+      margin-top: 5px;
+    }
+
+    .heading-text {
+      color: white;
+      background-color: #000;
+      font-size: 2rem;
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 3px;
+    }
+
+    .mobile {
+      min-width: 100%;
+      display: block;
+      margin-bottom: 0;
+    }
+
 }
