@@ -1,0 +1,62 @@
+<h1 class="text-center">Images</h1>
+<div class="container">
+  <div class="dropdown">
+    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort By:
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="?id=bridesmaids">Bride & Bridesmaids</a>
+      <a class="dropdown-item" href="?id=groom-groomsmen">Groom & Groomsmen</a>
+      <a class="dropdown-item" href="?id=venue">Venue</a>
+      <a class="dropdown-item" href="?id=photo-shoot">Couple Photoshoot</a>
+      <a class="dropdown-item" href="?id=reception">Reception</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="column">
+    {{#each col1}}
+      <a href="webimages/md_{{this.imageName}}" class="tn-img-gallery" data-fancybox="images" data-srcset="webimages/lg_{{this.imageName}} 800w, webimages/md_{{this.imageName}} 570w, webimages/tn_{{this.imageName}} 280w " data-caption={{this.category}}>
+        <img src="webimages/tn_{{this.imageName}}" class="photo">
+        <div class="description">
+          <p>{{this.imageDescription}}</p>
+        </div>
+      </a>
+
+    {{/each}}
+  </div>
+
+  <div class="column">
+    {{#each col2}}
+      <a href="webimages/md_{{this.imageName}}" class="tn-img-gallery" data-fancybox="images" data-srcset="webimages/lg_{{this.imageName}} 800w, webimages/md_{{this.imageName}} 570w, webimages/tn_{{this.imageName}} 280w " data-caption={{this.category}}>
+        <img src="webimages/tn_{{this.imageName}}" class="photo">
+        <div class="description">
+          <p>{{this.imageDescription}}</p>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+
+  <div class="column">
+    {{#each col3}}
+      <a href="webimages/md_{{this.imageName}}" class="tn-img-gallery" data-fancybox="images" data-srcset="webimages/lg_{{this.imageName}} 800w, webimages/md_{{this.imageName}} 570w, webimages/tn_{{this.imageName}} 280w " data-caption={{this.category}}>
+        <img src="webimages/tn_{{this.imageName}}" class="photo">
+        <div class="description">
+          <p>{{this.imageDescription}}</p>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+
+  <div class="column">
+    {{#each col4}}
+      <a href="webimages/md_{{this.imageName}}" class="tn-img-gallery" data-fancybox="images" data-srcset="webimages/lg_{{this.imageName}} 800w, webimages/md_{{this.imageName}} 570w, webimages/tn_{{this.imageName}} 280w " data-caption={{this.category}}>
+        <img src="webimages/tn_{{this.imageName}}" class="photo">
+        <div class="description">
+          <p>{{this.imageDescription}}</p>
+        </div>
+      </a>
+    {{/each}}
+  </div>
