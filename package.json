@@ -9,6 +9,7 @@
   "author": "mash",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "get-pixels": "^3.3.0",
