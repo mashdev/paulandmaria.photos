@@ -6,7 +6,13 @@ mysql = require('mysql');
 // iterate through images directory to read file names to array
 var files = fs.readdirSync('images/');
 
-var resizeLocation = "views/public/webimages/"
+var resizeLocation = "views/public/webimages/";
+
+gm('images/IMG_0697.JPG')
+.identify(function (err, data) {
+  if (!err) console.log(data)
+});
+
 
 /*
 
@@ -84,14 +90,14 @@ for(let i = 0; i < files.length; i++) {
 
 // looks through images dir and creates a medium size image @ 15%
 
-for (let i = 0; i < files.length; i++) {
-  gm('images/' + files[i])
-  .resize(15,'%')
-  .write(resizeLocation + 'lg_'+ files[i], function(err) {
-    // if(err) return console.dir(arguments)
-    if(!err) return console.log(this.outname);
-  })
-}
+// for (let i = 0; i < files.length; i++) {
+//   gm('images/' + files[i])
+//   .resize(15,'%')
+//   .write(resizeLocation + 'lg_'+ files[i], function(err) {
+//     // if(err) return console.dir(arguments)
+//     if(!err) return console.log(this.outname);
+//   })
+// }
 
 // console.log("exit process");
 // return process.exit(1);
