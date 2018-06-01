@@ -42,7 +42,6 @@ app.get('/', function(req, res){
 /** Images page**/
 app.use('/images', express.static(publicPath));
 app.get('/images', function(req, res){
-if(req.query.id == "all"){
     /** query to display all images**/
     var sql1 = 'SELECT * FROM images limit 105';
     var sql2 = 'SELECT * FROM images where ID > 105 limit 100';
@@ -67,7 +66,10 @@ if(req.query.id == "all"){
         }); //end connection.query(sql3)
       }); //end connection.query(sql2)
     }); //end connection.query(sql1)
-} else if (req.query.id == "bridesmaids") {
+});
+
+app.use('/bride', express.static(publicPath));
+app.get('/bride', function(req, res) {
   /** query to display bride & bridesmaids category**/
   var sql1 = 'SELECT * FROM images where category="bride-bridesmaids" limit 12';
   var sql2 = 'SELECT * FROM images where category="bride-bridesmaids" and ID > 13 limit 12';
@@ -81,7 +83,7 @@ if(req.query.id == "all"){
           if(err) {
               console.log('error in query' + err)
           }
-          res.render('images', {
+          res.render('bride', {
               col1: rows1,
               col2: rows2,
               col3: rows3,
@@ -92,8 +94,12 @@ if(req.query.id == "all"){
       }); //end connection.query(sql3)
     }); //end connection.query(sql2)
   }); //end connection.query(sql1)
+});
 
-} else if (req.query.id == "groom-groomsmen") {
+
+
+app.use('/groom', express.static(publicPath));
+app.get('/groom', function(req, res) {
   /** query to display groom & groomsmen category**/
   var sql1 = 'SELECT * FROM images where category = "groom-groomsmen" and ID > 50 limit 12';
   var sql2 = 'SELECT * FROM images where category = "groom-groomsmen" and ID > 62 limit 9';
@@ -107,7 +113,7 @@ if(req.query.id == "all"){
           if(err) {
               console.log('error in query' + err)
           }
-          res.render('images', {
+          res.render('groom', {
               col1: rows1,
               col2: rows2,
               col3: rows3,
@@ -118,32 +124,38 @@ if(req.query.id == "all"){
       }); //end connection.query(sql3)
     }); //end connection.query(sql2)
   }); //end connection.query(sql1)
-}
- else if (req.query.id == "venue") {
-   /** query to display venue category**/
-  var sql1 = 'SELECT * FROM images where category = "venue" and ID > 92 limit 5';
-  var sql2 = 'SELECT * FROM images where category = "venue" and ID > 96 limit 4';
-  var sql3 = 'SELECT * FROM images where category = "venue" and ID > 100 limit 4';
-  var sql4 = 'SELECT * FROM images where category = "venue" and ID > 104 ';
+});
 
-  connection.query(sql1, function(err, rows1) {
-    connection.query(sql2, function(err, rows2) {
-      connection.query(sql3, function(err, rows3) {
-        connection.query(sql4, function(err, rows4) {
-          if(err) {
-              console.log('error in query' + err)
-          }
-          res.render('images', {
-              col1: rows1,
-              col2: rows2,
-              col3: rows3,
-              page: 'Venue',
-          });
-        }); //end connection.query(sql4)
-      }); //end connection.query(sql3)
-    }); //end connection.query(sql2)
-  }); //end connection.query(sql1)
-}  else if (req.query.id == "photo-shoot") {
+app.use('/venue', express.static(publicPath));
+app.get('/venue', function(req, res) {
+  /** query to display venue category**/
+ var sql1 = 'SELECT * FROM images where category = "venue" and ID > 92 limit 5';
+ var sql2 = 'SELECT * FROM images where category = "venue" and ID > 96 limit 4';
+ var sql3 = 'SELECT * FROM images where category = "venue" and ID > 100 limit 4';
+ var sql4 = 'SELECT * FROM images where category = "venue" and ID > 104';
+
+ connection.query(sql1, function(err, rows1) {
+   connection.query(sql2, function(err, rows2) {
+     connection.query(sql3, function(err, rows3) {
+       connection.query(sql4, function(err, rows4) {
+         if(err) {
+             console.log('error in query' + err)
+         }
+         res.render('venue', {
+             col1: rows1,
+             col2: rows2,
+             col3: rows3,
+             col4: rows4,
+             page: 'Venue',
+         });
+       }); //end connection.query(sql4)
+     }); //end connection.query(sql3)
+   }); //end connection.query(sql2)
+ }); //end connection.query(sql1)
+});
+
+app.use('/photoshoot', express.static(publicPath));
+app.get('/photoshoot', function(req, res) {
   /** query to display photoshoot category**/
   var sql1 = 'SELECT * FROM images where category = "photo-shoot" and ID > 108 limit 24';
   var sql2 = 'SELECT * FROM images where category = "photo-shoot" and ID > 132 limit 21';
@@ -157,7 +169,7 @@ if(req.query.id == "all"){
           if(err) {
               console.log('error in query' + err)
           }
-          res.render('images', {
+          res.render('photoshoot', {
               col1: rows1,
               col2: rows2,
               col3: rows3,
@@ -168,7 +180,10 @@ if(req.query.id == "all"){
       }); //end connection.query(sql3)
     }); //end connection.query(sql2)
   }); //end connection.query(sql1)
-}  else if (req.query.id == "reception") {
+});
+
+app.use('/reception', express.static(publicPath));
+app.get('/reception', function(req, res) {
   /** query to display reception category**/
   var sql1 = 'SELECT * FROM images where category = "reception" and ID > 195 limit 58';
   var sql2 = 'SELECT * FROM images where category = "reception" and ID > 253 limit 53';
@@ -195,10 +210,8 @@ if(req.query.id == "all"){
       }); //end connection.query(sql3)
     }); //end connection.query(sql2)
   }); //end connection.query(sql1)
-}
+});
 
-
-}); // end apt.get(/images)
 
 /** Videos page **/
 app.use('/videos', express.static(publicPath));
@@ -221,7 +234,7 @@ app.use(function(err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500; // Sets a generic server error status code if none is part of the err
 
   if (err.shouldRedirect) {
-    res.render('errorPage') // 
+    res.render('errorPage') //
   } else {
     res.status(err.statusCode).send(err.message); // If shouldRedirect is not defined in our error, sends our original err data
   }
