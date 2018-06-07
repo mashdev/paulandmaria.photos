@@ -1,10 +1,10 @@
+/** sticky navbar **/
 window.onscroll = function() {
   stickyHeader()
 };
 
 var header = document.getElementById('stickyTop');
 var col = document.getElementById('row-mobile');
-
 var sticky = header.offsetTop;
 
 function stickyHeader() {
@@ -16,3 +16,5 @@ function stickyHeader() {
     col.classList.remove("sticky-gap");
   }
 }
+
+/**/
