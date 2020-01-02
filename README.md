@@ -1,2 +1,2 @@
 ## Photo Gallery
-## Description to come..
+Simple photo gallery built on NodeJS for the backend, Mysql for data storage, and Handlebars for displaying the views.
